@@ -1,0 +1,11 @@
+version: '2.1'
+
+services:
+  php:
+    image: php
+    build: .
+    volumes:
+      - ./apache-config.conf:/etc/apache2/sites-enabled/000-default.<<
+      - ./website:/var/www/website
+    ports:
+      - 8080:80
